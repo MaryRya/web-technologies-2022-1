@@ -22,11 +22,24 @@ export default class ListItems {
 		this.el.insertAdjacentHTML('beforeend', this.renderParent(this.data));
 	}
 
-	renderParent() {
+	renderParent(data) {
+		if(data.hasChildren){
+			let dRow="<div class=\"list-item \" data-parent>\n" +
+				"<div class=\"list-item__inner\">\n" +
+				"<img class=\"list-item__arrow\" src=\"./assets/img/chevron-down.png\" alt=\"chevron-down\" data-open>\n" + "<img class=\"list-item__folder\" src=\"./assets/img/folder.png\" alt=\"folder\">\n" + "<span>"+data.name+"</span>\n" + "</div>\n" +
+				"<div class=\"list-item__items\">"
+			data.items.forEach(childrenElement=>{
+				dRow+=this.renderParent(childrenElement);
+			})
+
+			return dRow+"</div> </div>"
+		}
+
 		//проверку на hasChildren
 
 		//render
-
+		else return "<div class=\"list-item__inner\">\n" + "<img class=\"list-item__folder\" src=\"./assets/img/folder.png\" alt=\"folder\">\n" +
+			"<span>"+data.name+"</span>\n" + "</div>"
 		// if hasChildren renderParent();
 	}
 

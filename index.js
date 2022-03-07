@@ -16,60 +16,79 @@ function init() {
 				hasChildren: true,
 				items: [
 					{
-						name: 'Ulgran1',
+						name: 'Ulgran',
 						hasChildren: true,
 						items: [
 							{
-								name: 'SMT1',
+								name: 'Smth',
 								hasChildren: false,
 								items: []
 							},
 							{
-								name: 'SMT2',
+								name: 'Smth',
 								hasChildren: false,
 								items: []
 							}
 						]
 					},
 					{
-						name: 'Ulgran2',
+						name: 'Vigro Mramor',
+						hasChildren: false,
+						items: []
+					},
+					{
+						name: 'Handmade',
 						hasChildren: true,
 						items: [
 							{
-								name: 'SMT3',
+								name: 'Smth',
 								hasChildren: false,
 								items: []
 							},
 							{
-								name: 'SMT4',
+								name: 'Smth',
 								hasChildren: false,
 								items: []
 							}
 						]
-					}
+					},
+					{
+						name: 'Vigro Mramor',
+						hasChildren: false,
+						items: []
+					},
 				]
-			},{
+
+			},
+			{
 				name: 'Фильтры',
 				hasChildren: true,
 				items: [
 					{
-						name: 'Ulgran3',
+						name: 'Ulgran',
 						hasChildren: true,
 						items: [
 							{
-								name: 'SMT5',
+								name: 'Smth',
 								hasChildren: false,
 								items: []
 							},
 							{
-								name: 'SMT6',
+								name: 'Smth',
 								hasChildren: false,
 								items: []
 							}
 						]
-					}
+					},
+					{
+						name: 'Vigro Mramor',
+						hasChildren: false,
+						items: []
+					},
 				]
+
 			}
+
 		]
 	}
 
