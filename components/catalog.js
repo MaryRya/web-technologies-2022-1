@@ -44,19 +44,19 @@ export default class Catalog {
         this.pageCount = Math.floor(this.count / this.limit)
     }
 
-    getItems() {
+    async getItems() {
         const url = `https://jsonplaceholder.typicode.com/posts?_limit=${this.limit}&_page=${this.page}`
-
-        fetch(url)
-        .then(res => {
+        try {
+        const res = await fetch(url);
             this.count = res.headers.get('x-total-count')
             this.getPageCount()
-            return res.json()
-        })
-        .then(data => {
-            this.renderItems(data)
-            this.renderPagination()
-        })
+            const data = await res.json();
+            if(data){
+                this.renderItems(data)
+                this.renderPagination()
+            }
+        } catch(error) {
+            console.error('Ошибка:',error)}
     }
 
     renderItems(items) {
