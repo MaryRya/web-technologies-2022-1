@@ -80,8 +80,9 @@ function init() {
                 obj[field.name] = field.input.value
             })
             await new Auth().reg(obj)
+            console.log(obj)
         }
     ).init()
 
-    new Auth().me()
+    new Auth().me();
 }
